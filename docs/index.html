@@ -1,1 +1,1568 @@
-<!DOCTYPE html>\n<html lang="en">\n<head>\n    <meta charset="UTF-8">\n    <meta name="viewport" content="width=device-width, initial-scale=1.0">\n    <title>Document</title>\n    <style>\n        body {\n            overflow: visible;\n        }\n        .tool-section {\n            overflow: visible;\n            margin: 1em 0;\n        }\n        .tool-card {\n            overflow: visible;\n        }\n        .form-container {\n            overflow: visible;\n        }\n        .grid {\n            display: grid;\n            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));\n            overflow: visible;\n        }\n    </style>\n</head>\n<body>\n    <div class="tool-section">\n        <div class="tool-card">Tool 1</div>\n        <div class="tool-card">Tool 2</div>\n        <div class="tool-card">Tool 3</div>\n    </div>\n    <div class="form-container">\n        <form>\n            <input type="text" placeholder="Enter text here">\n            <button type="submit">Submit</button>\n        </form>\n    </div>\n</body>\n</html>\n
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Landscaping Resource Hub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --earth-dark: #1E1E1E;
+            --earth-medium: #84BD48;
+            --earth-light: #587E30;
+            --sand: #ffffff;
+            --clay: #0099A9;
+            --stone: #696666;
+            --moss: #84BD48;
+            --cream: #F5F5F5;
+            --white: #ffffff;
+            --shadow: rgba(30, 30, 30, 0.12);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--white);
+            color: var(--earth-dark);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Header */
+        header {
+            padding: 2rem 0 3rem;
+            text-align: center;
+            animation: fadeInDown 0.8s ease-out;
+        }
+
+        h1 {
+            font-family: 'Raleway', sans-serif;
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 700;
+            color: var(--earth-dark);
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+            line-height: 1.1;
+        }
+
+        .tagline {
+            font-size: 1rem;
+            color: var(--earth-medium);
+            font-weight: 400;
+            max-width: 480px;
+            margin: 0 auto;
+            opacity: 0;
+            animation: fadeIn 1s ease-out 0.3s forwards;
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 3rem 0;
+            flex-wrap: wrap;
+            animation: fadeIn 1s ease-out 0.5s backwards;
+        }
+
+        nav button {
+            background: none;
+            border: none;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--stone);
+            cursor: pointer;
+            padding: 0.75rem 1.5rem;
+            position: relative;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        nav button::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background: var(--earth-medium);
+            transition: width 0.3s ease;
+        }
+
+        nav button:hover,
+        nav button.active {
+            color: var(--earth-medium);
+        }
+
+        nav button.active::after {
+            width: 80%;
+        }
+
+        /* Tool Sections */
+        .tool-section {
+            display: none;
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        .tool-section.active {
+            display: block;
+        }
+
+        .tool-card {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 3rem;
+            margin-bottom: 0;
+            box-shadow: 0 8px 32px var(--shadow);
+            border: 1px solid rgba(132, 189, 72, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .tool-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 48px var(--shadow);
+        }
+
+        h2 {
+            font-family: 'Raleway', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--earth-dark);
+            margin-bottom: 1rem;
+            letter-spacing: -0.01em;
+        }
+
+        h3 {
+            font-family: 'Raleway', sans-serif;
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--earth-medium);
+            margin: 2rem 0 1rem;
+        }
+
+        .expert-note {
+            background: linear-gradient(135deg, rgba(132, 189, 72, 0.1) 0%, rgba(0, 153, 169, 0.08) 100%);
+            border-left: 4px solid var(--moss);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 8px 8px 0;
+            font-style: italic;
+        }
+
+        .expert-note strong {
+            color: var(--earth-medium);
+            font-style: normal;
+            font-weight: 600;
+        }
+
+        /* Form Elements */
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            font-weight: 500;
+            color: var(--earth-medium);
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid rgba(132, 189, 72, 0.2);
+            border-radius: 8px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            background: var(--cream);
+            color: var(--earth-dark);
+            transition: all 0.3s ease;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: var(--earth-medium);
+            background: var(--white);
+        }
+
+        button.primary-btn {
+            background: linear-gradient(135deg, #5DA832 0%, #84BD48 100%);
+            color: var(--white);
+            border: none;
+            padding: 1rem 2.5rem;
+            border-radius: 8px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            box-shadow: 0 4px 16px rgba(132, 189, 72, 0.2);
+        }
+
+        button.primary-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 24px rgba(132, 189, 72, 0.3);
+        }
+
+        button.primary-btn:active {
+            transform: translateY(0);
+        }
+
+        /* Contact CTA Button */
+        .contact-cta {
+            background: linear-gradient(135deg, #0088B0 0%, #0099A9 100%);
+            color: var(--white);
+            border: none;
+            padding: 1.25rem 3rem;
+            border-radius: 8px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            box-shadow: 0 6px 24px rgba(0, 153, 169, 0.25);
+            display: inline-block;
+            text-decoration: none;
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .contact-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 32px rgba(0, 153, 169, 0.4);
+        }
+
+        .contact-cta:active {
+            transform: translateY(-1px);
+        }
+
+        .cta-container {
+            background: linear-gradient(135deg, rgba(132, 189, 72, 0.08) 0%, rgba(0, 153, 169, 0.06) 100%);
+            border: 2px solid rgba(132, 189, 72, 0.2);
+            border-radius: 16px;
+            padding: 2.5rem;
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .cta-container h3 {
+            font-family: 'Raleway', sans-serif;
+            font-size: 2rem;
+            color: var(--earth-dark);
+            margin-bottom: 1rem;
+        }
+
+        .cta-container p {
+            font-size: 1.1rem;
+            color: var(--earth-medium);
+            margin-bottom: 1.5rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .result-box {
+            background: #2D2D2D;
+            color: var(--white);
+            padding: 2rem;
+            border-radius: 12px;
+            margin-top: 2rem;
+            animation: slideInUp 0.5s ease-out;
+        }
+
+        .result-box h3 {
+            color: var(--sand);
+            margin-top: 0;
+        }
+
+        .result-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin: 1rem 0;
+            font-family: 'Raleway', sans-serif;
+        }
+
+        /* Grid Layouts (Fixed for mobile) */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+            gap: 1.5rem;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
+            gap: 1.5rem;
+        }
+
+        /* Calendar (Fixed for mobile) */
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .month-card {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(245, 245, 245, 0.95) 100%);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 2px solid rgba(132, 189, 72, 0.15);
+            transition: all 0.3s ease;
+        }
+
+        .month-card:hover {
+            border-color: var(--moss);
+            transform: translateY(-2px);
+        }
+
+        .month-card h4 {
+            font-family: 'Raleway', sans-serif;
+            font-size: 1.5rem;
+            color: var(--earth-medium);
+            margin-bottom: 1rem;
+        }
+
+        .task-list {
+            list-style: none;
+        }
+
+        .task-list li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .task-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--moss);
+            font-weight: bold;
+        }
+
+        /* Plant Cards (Fixed for mobile) */
+        .plant-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .plant-card {
+            background: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 2px solid rgba(132, 189, 72, 0.15);
+            transition: all 0.3s ease;
+        }
+
+        .plant-card:hover {
+            border-color: var(--moss);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px var(--shadow);
+        }
+
+        .plant-card-header {
+            background: linear-gradient(135deg, var(--moss) 0%, var(--earth-light) 100%);
+            color: var(--white);
+            padding: 1.5rem;
+        }
+
+        .plant-card-header h4 {
+            font-family: 'Raleway', sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .plant-card-body {
+            padding: 1.5rem;
+        }
+
+        .plant-tags {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+
+        .tag {
+            background: rgba(132, 189, 72, 0.2);
+            color: var(--earth-medium);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes slideInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1rem;
+            }
+
+            .tool-card {
+                padding: 2rem 1.5rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            nav {
+                gap: 1rem;
+            }
+
+            nav button {
+                padding: 0.5rem 1rem;
+                font-size: 0.85rem;
+            }
+        }
+
+        /* Zone Map Styling */
+        .zone-info {
+            background: linear-gradient(135deg, rgba(132, 189, 72, 0.15) 0%, rgba(0, 153, 169, 0.1) 100%);
+            padding: 2rem;
+            border-radius: 12px;
+            margin-top: 2rem;
+        }
+
+        .zone-badge {
+            display: inline-block;
+            background: var(--earth-medium);
+            color: var(--white);
+            padding: 0.5rem 1.5rem;
+            border-radius: 30px;
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        /* Top Bar */
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            position: relative;
+            z-index: 10;
+        }
+
+        .back-btn {
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--stone);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .back-btn:hover {
+            color: var(--earth-medium);
+        }
+
+        .top-logo img {
+            height: 35px;
+            width: auto;
+        }
+
+        /* Footer */
+        .site-footer {
+            background: var(--white);
+            color: var(--earth-dark);
+            padding: 3rem 2rem 1.5rem;
+            margin-top: 4rem;
+            position: relative;
+            z-index: 1;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .footer-main {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .footer-content {
+            text-align: center;
+        }
+
+        .footer-logo {
+            margin-bottom: 1.25rem;
+        }
+
+        .footer-logo img {
+            height: 65px;
+            width: auto;
+        }
+
+        .footer-info {
+            font-size: 0.95rem;
+            line-height: 1.8;
+            color: var(--earth-dark);
+        }
+
+        .footer-info a {
+            color: var(--earth-dark);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-info a:hover {
+            color: var(--earth-medium);
+        }
+
+        .footer-social {
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .footer-social a {
+            color: var(--earth-dark);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            display: flex;
+            align-items: center;
+        }
+
+        .footer-social a:hover {
+            color: var(--earth-medium);
+        }
+
+        .footer-bottom {
+            max-width: 1400px;
+            margin: 2rem auto 0;
+            padding-top: 1.25rem;
+            border-top: 1px solid #e0e0e0;
+            text-align: center;
+            font-size: 0.8rem;
+            color: var(--stone);
+        }
+
+        .footer-bottom a {
+            color: var(--stone);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-bottom a:hover {
+            color: var(--earth-medium);
+        }
+
+        @media (max-width: 768px) {
+            .footer-main {
+                flex-direction: column;
+            }
+
+            .footer-social {
+                position: static;
+                transform: none;
+                margin-top: 1.5rem;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="top-bar">
+        <a href="https://www.yardsharklawncare.com" target="_blank" class="back-btn">← Back to Yard Shark</a>
+    </div>
+    <div class="container">
+        <header>
+            <div style="display: inline-block; margin-bottom: 1rem;">
+                <img src="data:image/png;base64,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
+" alt="Yard Shark" style="height: 70px; width: auto; margin-bottom: 0.25rem;">
+                <div style="font-family: 'Poppins', sans-serif; font-size: 0.9rem; color: var(--earth-light); font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase;">Landscaping Knowledge Center</div>
+            </div>
+            <p class="tagline">We're here to help you understand and love your outdoor space! Use our expert resources to plan your dream landscape, then let us bring it to life.</p>
+        </header>
+
+        <nav id="mainNav">
+            <button class="active" data-section="calculator">Investment Value Guide</button>
+            <button data-section="plants">Plant Selector</button>
+            <button data-section="calendar">Maintenance Calendar</button>
+            <button data-section="materials">Material Calculator</button>
+            <button data-section="roi">Property Value Impact</button>
+            <button data-section="zone">Hardiness Zone</button>
+        </nav>
+
+        <div id="calculator" class="tool-section active">
+            <div class="tool-card">
+                <h2>Landscaping Investment Value Guide</h2>
+                <p>Not all landscaping projects deliver equal returns. Understanding which improvements provide the best value helps you prioritize investments that enhance both enjoyment and property worth.</p>
+                
+                <div class="expert-note">
+                    <strong>Why We Love This Tool:</strong> Smart landscaping choices can return 100-200% of your investment when selling, while also providing immediate lifestyle benefits. Here at Yard Shark, we focus on projects that solve functional problems while enhancing visual appeal—this dual-purpose approach maximizes both your daily enjoyment and resale value. Plus, it's just more fun to invest in things that pay you back!
+                </div>
+
+                <div class="form-group">
+                    <label>Select Project Type</label>
+                    <select id="projectType">
+                        <option value="mulch">Professional Mulching & Bed Maintenance</option>
+                        <option value="sod">Lawn Installation & Renovation</option>
+                        <option value="patio">Patio & Outdoor Living Space</option>
+                        <option value="plantbed">Foundation & Accent Planting</option>
+                        <option value="irrigation">Smart Irrigation System</option>
+                        <option value="retaining">Retaining Wall & Grading Solutions</option>
+                        <option value="landscape">Complete Landscape Transformation</option>
+                    </select>
+                </div>
+
+                <button class="primary-btn" id="btnValueGuide">View Value Analysis</button>
+
+                <div id="costResult"></div>
+            </div>
+
+            <div class="cta-container">
+                <h3>Love what you're learning?</h3>
+                <p>Let Yard Shark bring your vision to life! We'll provide a detailed, no-obligation quote tailored to your property and goals.</p>
+                <a href="https://www.yardsharklawncare.com/request-a-quote" class="contact-cta" target="_blank">Get Your Free Quote →</a>
+            </div>
+        </div>
+
+        <div id="plants" class="tool-section">
+            <div class="tool-card">
+                <h2>Intelligent Plant Selection Guide</h2>
+                <p>Choosing the right plants for your specific conditions is the foundation of a thriving landscape. This tool matches plants to your unique environment.</p>
+
+                <div class="expert-note">
+                    <strong>Here's the Secret:</strong> We at Yard Shark don't just look at hardiness zones—we consider sun exposure, soil drainage, wind patterns, and what's already growing around your property. When plants are matched perfectly to their location, they practically take care of themselves! Less watering, less maintenance, and way more beauty. That's the Yard Shark difference.
+                </div>
+
+                <div class="grid-3">
+                    <div class="form-group">
+                        <label>Hardiness Zone</label>
+                        <select id="plantZone">
+                            <option value="3">Zone 3 (-40°F to -30°F)</option>
+                            <option value="4">Zone 4 (-30°F to -20°F)</option>
+                            <option value="5">Zone 5 (-20°F to -10°F)</option>
+                            <option value="6" selected>Zone 6 (-10°F to 0°F)</option>
+                            <option value="7">Zone 7 (0°F to 10°F)</option>
+                            <option value="8">Zone 8 (10°F to 20°F)</option>
+                            <option value="9">Zone 9 (20°F to 30°F)</option>
+                            <option value="10">Zone 10 (30°F to 40°F)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Sun Exposure</label>
+                        <select id="sunExposure">
+                            <option value="full">Full Sun (6+ hours)</option>
+                            <option value="partial">Partial Sun (4-6 hours)</option>
+                            <option value="shade">Shade (< 4 hours)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Soil Type</label>
+                        <select id="soilType">
+                            <option value="clay">Clay (holds water)</option>
+                            <option value="loam">Loam (ideal balance)</option>
+                            <option value="sandy">Sandy (fast draining)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="grid-3">
+                    <div class="form-group">
+                        <label>Water Availability</label>
+                        <select id="waterLevel">
+                            <option value="low">Low (drought tolerant)</option>
+                            <option value="medium">Medium (occasional watering)</option>
+                            <option value="high">High (regular watering)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Plant Type</label>
+                        <select id="plantType">
+                            <option value="all">All Types</option>
+                            <option value="perennial">Perennials</option>
+                            <option value="shrub">Shrubs</option>
+                            <option value="tree">Trees</option>
+                            <option value="grass">Ornamental Grasses</option>
+                            <option value="groundcover">Groundcovers</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Desired Height</label>
+                        <select id="plantHeight">
+                            <option value="all">Any Height</option>
+                            <option value="short">Short (< 2 feet)</option>
+                            <option value="medium">Medium (2-5 feet)</option>
+                            <option value="tall">Tall (5-15 feet)</option>
+                            <option value="vtall">Very Tall (15+ feet)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button class="primary-btn" id="btnFindPlants">Find Recommended Plants</button>
+
+                <div id="plantResults"></div>
+            </div>
+
+            <div class="cta-container">
+                <h3>Ready to see these beauties in your yard?</h3>
+                <p>Our team at Yard Shark knows exactly which plants thrive in your area. We'll design a custom planting plan that looks amazing and grows beautifully!</p>
+                <a href="https://www.yardsharklawncare.com/request-a-quote" class="contact-cta" target="_blank">Let's Design Your Garden →</a>
+            </div>
+        </div>
+
+        <div id="calendar" class="tool-section">
+            <div class="tool-card">
+                <h2>Seasonal Maintenance Calendar</h2>
+                <p>Professional landscaping maintenance follows the seasons. This calendar provides month-by-month guidance for optimal landscape health.</p>
+
+                <div class="expert-note">
+                    <strong>Timing is Everything!</strong> Want to know a Yard Shark secret? The difference between a good landscape and a WOW landscape often comes down to timing. Fertilizing, pruning, and planting at just the right moment maximizes plant health and minimizes stress. This calendar reflects what we've learned from years of making landscapes thrive in your climate. Follow it and your plants will thank you!
+                </div>
+
+                <div class="form-group">
+                    <label>Your Region</label>
+                    <select id="region">
+                        <option value="northeast">Northeast (Zones 5-7)</option>
+                        <option value="southeast">Southeast (Zones 7-9)</option>
+                        <option value="midwest">Midwest (Zones 4-6)</option>
+                        <option value="southwest">Southwest (Zones 8-10)</option>
+                        <option value="northwest">Northwest (Zones 7-9)</option>
+                    </select>
+                </div>
+
+                <div id="calendarDisplay"></div>
+            </div>
+
+            <div class="cta-container">
+                <h3>Let us handle the to-do list!</h3>
+                <p>Yard Shark offers seasonal maintenance packages so you can enjoy your landscape without the work. We'll keep everything healthy, beautiful, and thriving year-round.</p>
+                <a href="https://www.yardsharklawncare.com/request-a-quote" class="contact-cta" target="_blank">Explore Maintenance Plans →</a>
+            </div>
+        </div>
+
+        <div id="materials" class="tool-section">
+            <div class="tool-card">
+                <h2>Material Quantity Calculator</h2>
+                <p>Accurately calculating materials prevents over-ordering (wasting money) and under-ordering (project delays). Our calculator includes professional waste factors.</p>
+
+                <div class="expert-note">
+                    <strong>Pro Tip from Yard Shark:</strong> Ever wonder why we always add 10-15% extra materials? Here's why: cuts for irregular shapes, future repairs, and (here's the big one) matching colors. Mulch settles and breaks down, pavers from different batches can look totally different, and running out mid-project is the worst! Trust us, a little extra now saves big headaches later.
+                </div>
+
+                <div class="grid-2">
+                    <div class="form-group">
+                        <label>Material Type</label>
+                        <select id="materialType">
+                            <option value="mulch">Mulch (cubic yards)</option>
+                            <option value="soil">Topsoil (cubic yards)</option>
+                            <option value="gravel">Gravel/Stone (tons)</option>
+                            <option value="pavers">Pavers (quantity)</option>
+                            <option value="sod">Sod (square feet)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Coverage Area (square feet)</label>
+                        <input type="number" id="coverageArea" value="300" min="1">
+                    </div>
+                </div>
+
+                <div class="form-group" id="depthField">
+                    <label>Desired Depth (inches)</label>
+                    <input type="number" id="materialDepth" value="3" min="1" max="12">
+                </div>
+
+                <button class="primary-btn" id="btnCalcMaterial">Calculate Materials</button>
+
+                <div id="materialResult"></div>
+            </div>
+
+            <div class="cta-container">
+                <h3>Skip the math—we've got it covered!</h3>
+                <p>Yard Shark handles ordering, delivery, and installation of all materials. You get professional results without the guesswork or heavy lifting.</p>
+                <a href="https://www.yardsharklawncare.com/request-a-quote" class="contact-cta" target="_blank">Request Installation Quote →</a>
+            </div>
+        </div>
+
+        <div id="roi" class="tool-section">
+            <div class="tool-card">
+                <h2>Landscaping ROI & Property Value Impact</h2>
+                <p>Quality landscaping is one of the highest-ROI home improvements. Understanding the financial impact helps you make informed investment decisions.</p>
+
+                <div class="expert-note">
+                    <strong>The Numbers Don't Lie:</strong> According to the National Association of Realtors, professional landscaping can boost home value by 5-12%. And get this—front yard improvements can return 100-200% of your investment! At Yard Shark, we've seen it happen again and again: beautiful curb appeal gets buyers excited, and excited buyers pay more. Plus, well-maintained landscapes sell up to 20% faster. It's a win-win!
+                </div>
+
+                <div class="grid-2">
+                    <div class="form-group">
+                        <label>Current Home Value ($)</label>
+                        <input type="number" id="homeValue" value="400000" min="0">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Landscaping Investment ($)</label>
+                        <input type="number" id="landscapeInvestment" value="15000" min="0">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Project Type</label>
+                    <select id="roiProjectType">
+                        <option value="curb">Curb Appeal / Front Yard (highest ROI)</option>
+                        <option value="outdoor">Outdoor Living Space (patio, kitchen)</option>
+                        <option value="full">Complete Landscape Renovation</option>
+                        <option value="maintenance">Annual Maintenance Program</option>
+                    </select>
+                </div>
+
+                <button class="primary-btn" id="btnCalcROI">Calculate Value Impact</button>
+
+                <div id="roiResult"></div>
+            </div>
+
+            <div class="cta-container">
+                <h3>Maximize your investment with Yard Shark!</h3>
+                <p>Smart landscaping pays off—and we'll help you get the best return. Let's create a beautiful outdoor space that adds real value to your property.</p>
+                <a href="https://www.yardsharklawncare.com/request-a-quote" class="contact-cta" target="_blank">Start Your Value Project →</a>
+            </div>
+        </div>
+
+        <div id="zone" class="tool-section">
+            <div class="tool-card">
+                <h2>USDA Hardiness Zone Finder</h2>
+                <p>Plant hardiness zones determine which plants will thrive in your climate. Knowing your zone is the first step in plant selection.</p>
+
+                <div class="expert-note">
+                    <strong>Beyond the Zone—Yard Shark's Approach:</strong> Here's something cool: hardiness zones tell you about winter cold, but we also think about heat tolerance, humidity, rainfall, and those special microclimates in your yard. That south-facing wall? It might act like you're in a zone warmer. That low spot where frost settles? Zone colder. We geek out on this stuff so your plants don't just survive—they absolutely THRIVE!
+                </div>
+
+                <div class="form-group">
+                    <label>Your ZIP Code</label>
+                    <input type="text" id="zipCode" placeholder="Enter ZIP code" maxlength="5">
+                </div>
+
+                <button class="primary-btn" id="btnFindZone">Find My Zone</button>
+
+                <div id="zoneResult"></div>
+            </div>
+
+            <div class="cta-container">
+                <h3>Local expertise you can trust!</h3>
+                <p>Yard Shark specializes in landscapes that thrive in YOUR climate. We know what works, what doesn't, and how to create outdoor spaces that flourish for years to come.</p>
+                <a href="https://www.yardsharklawncare.com/request-a-quote" class="contact-cta" target="_blank">Talk to Our Local Experts →</a>
+            </div>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-main">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <a href="https://www.yardsharklawncare.com" target="_blank"><img src="data:image/png;base64,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
+" alt="Yard Shark Lawn Care Logo"></a>
+                </div>
+                <div class="footer-info">
+                    <p>3850 River Road, Sodus, MI 49126</p>
+                    <p style="margin-top: 0.75rem;"><a href="mailto:Blaine@YardSharkLawnCare.com">Blaine@YardSharkLawnCare.com</a></p>
+                    <p>OFFICE: <a href="tel:2693320325">(269) 332-0325</a> | BLAINE: <a href="tel:2693254882">(269) 325-4882</a></p>
+                </div>
+            </div>
+            <div class="footer-social">
+                <a href="https://www.facebook.com/YSLawn" target="_blank" aria-label="Facebook">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+                </a>
+                <a href="https://www.instagram.com/yslawn/" target="_blank" aria-label="Instagram">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                </a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>&copy; 2026 Yard Shark Lawn Care &nbsp;|&nbsp; Designed by <a href="https://FloodCreative.co/websites" target="_blank"><strong>FloodCreative.co</strong></a></span>
+        </div>
+    </footer>
+
+    <script>
+        // Navigation
+        function showSection(sectionId, btn) {
+            const sections = document.querySelectorAll('.tool-section');
+            const buttons = document.querySelectorAll('nav button');
+            
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            buttons.forEach(button => {
+                button.classList.remove('active');
+            });
+            
+            document.getElementById(sectionId).classList.add('active');
+            btn.classList.add('active');
+            
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Project Value Guide
+        function updateValueGuide() {
+            const type = document.getElementById('projectType').value;
+            
+            const projectData = {
+                mulch: {
+                    roi: '50-100%',
+                    headline: 'The Foundation of Curb Appeal',
+                    benefits: [
+                        'Creates instant visual polish and "finished" appearance',
+                        'Suppresses weeds, reducing maintenance costs by 60-70%',
+                        'Retains soil moisture, cutting water usage by 25-30%',
+                        'Protects plant roots from temperature extremes',
+                        'Prevents soil erosion and compaction from rain impact'
+                    ],
+                    whyValue: 'Fresh mulch signals "well-maintained property" to buyers and neighbors. It\'s the fastest, most cost-effective way to elevate your landscape\'s appearance. Professional installation with proper edging creates clean lines that last.',
+                    timing: 'Annual spring refresh provides maximum visual impact. Fall application protects roots through winter.'
+                },
+                sod: {
+                    roi: '100-150%',
+                    headline: 'Instant Transformation & Livability',
+                    benefits: [
+                        'Transforms outdoor space from unusable to enjoyable immediately',
+                        'Prevents erosion and stabilizes soil on slopes',
+                        'Cools surrounding air by 10-15°F compared to bare soil',
+                        'Filters stormwater runoff and improves drainage',
+                        'Eliminates mud tracking and creates clean outdoor areas'
+                    ],
+                    whyValue: 'A healthy lawn is non-negotiable for resale value in most markets. It signals pride of ownership and creates the "move-in ready" feeling buyers pay premium for. Professional installation ensures proper grading that prevents future drainage issues.',
+                    timing: 'Early fall installation (September-October) allows roots to establish before winter stress.'
+                },
+                patio: {
+                    roi: '70-120%',
+                    headline: 'Extended Living Space That Pays Back',
+                    benefits: [
+                        'Adds functional square footage without structural permits',
+                        'Creates outdoor entertaining hub that modern buyers expect',
+                        'Reduces lawn maintenance area while increasing usability',
+                        'Solves drainage issues when properly graded',
+                        'Defines outdoor "rooms" that enhance property flow'
+                    ],
+                    whyValue: 'Outdoor living spaces appeal to lifestyle buyers willing to pay more. Quality hardscaping also solves functional problems—proper base preparation prevents settling, and integrated drainage protects your foundation. The ROI jumps dramatically when the patio connects seamlessly to indoor living areas.',
+                    timing: 'Spring or fall installation avoids summer heat stress and allows for curing before heavy use.'
+                },
+                plantbed: {
+                    roi: '100-200%',
+                    headline: 'Architectural Impact & Year-Round Interest',
+                    benefits: [
+                        'Frames architecture and creates intentional focal points',
+                        'Provides seasonal color progression that engages year-round',
+                        'Softens hardscaping and balances built elements',
+                        'Attracts pollinators and supports local ecosystems',
+                        'Reduces lawn area, lowering long-term maintenance'
+                    ],
+                    whyValue: 'Foundation plantings are the #1 factor in curb appeal—they\'re what buyers see first. Professional designers use layering (trees, shrubs, perennials, groundcovers) to create depth and prevent the "spotty" look of amateur plantings. Proper plant selection means thriving landscapes that look better with age.',
+                    timing: 'Fall planting allows root establishment during cool weather. Spring works for most perennials.'
+                },
+                irrigation: {
+                    roi: '40-80%',
+                    headline: 'Preservation Through Precision',
+                    benefits: [
+                        'Reduces water waste by 30-50% vs. manual watering',
+                        'Prevents landscape investment loss from drought stress',
+                        'Waters during optimal times (early morning) automatically',
+                        'Maintains consistent soil moisture for plant health',
+                        'Frees your time while ensuring thriving landscapes'
+                    ],
+                    whyValue: 'Smart irrigation is the difference between landscapes that thrive and those that merely survive. It protects your entire landscape investment—a $30,000 landscape can die in one drought without proper watering. Modern systems with rain sensors and zone control deliver "set it and forget it" peace of mind.',
+                    timing: 'Install before peak growing season. Spring installation protects summer plantings.'
+                },
+                retaining: {
+                    roi: '80-150%',
+                    headline: 'Engineering Solutions That Enable Beauty',
+                    benefits: [
+                        'Solves critical erosion and slope stability problems',
+                        'Creates usable flat areas from previously wasted slopes',
+                        'Protects foundations from water damage and settling',
+                        'Adds dimensional interest and architectural drama',
+                        'Enables terraced planting beds on challenging terrain'
+                    ],
+                    whyValue: 'Retaining walls are both functional engineering and visual assets. They solve expensive problems (foundation damage, erosion) while creating opportunities (terraced gardens, level patios). Professional installation with proper drainage and structural integrity prevents catastrophic failure that can cost 10x the original investment to repair.',
+                    timing: 'Dry season installation prevents groundwater complications. Address erosion before next rainy season.'
+                },
+                landscape: {
+                    roi: '100-200%',
+                    headline: 'Cohesive Design That Transforms Property Value',
+                    benefits: [
+                        'Creates unified vision that flows from street to backyard',
+                        'Solves multiple problems (drainage, privacy, access) simultaneously',
+                        'Balances aesthetics with functionality and maintenance needs',
+                        'Establishes mature, layered plantings vs. sparse "new" look',
+                        'Positions property in top tier of neighborhood comparables'
+                    ],
+                    whyValue: 'Complete landscape transformations deliver exponential returns because they address the entire property as a system. Professional design ensures drainage flows correctly, plants thrive in their locations, and sight lines guide visitors naturally. The result: buyers perceive the property as premium and worth more per square foot than comparable homes with amateur landscapes.',
+                    timing: 'Phased installation over 2-3 seasons spreads investment while allowing adaptive design.'
+                }
+            };
+            
+            const project = projectData[type];
+            
+            const resultHTML = `
+                <div class="result-box">
+                    <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem;">
+                        <div>
+                            <h3 style="margin: 0;">${project.headline}</h3>
+                        </div>
+                        <div style="text-align: right;">
+                            <div style="font-size: 0.9rem; opacity: 0.9; margin-bottom: 0.25rem;">Typical ROI at Resale</div>
+                            <div class="result-value" style="font-size: 2.25rem; margin: 0;">${project.roi}</div>
+                        </div>
+                    </div>
+                    
+                    <div style="background: rgba(255,255,255,0.15); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0;">
+                        <h4 style="color: var(--sand); margin-bottom: 1rem; font-size: 1.1rem;">Value Drivers:</h4>
+                        <ul style="margin: 0; padding-left: 1.2rem; line-height: 1.8;">
+                            ${project.benefits.map(benefit => `<li>${benefit}</li>`).join('')}
+                        </ul>
+                    </div>
+                    
+                    <div style="margin-top: 1.5rem;">
+                        <h4 style="color: var(--sand); margin-bottom: 0.75rem; font-size: 1.1rem;">Why This Investment Works:</h4>
+                        <p style="line-height: 1.7; opacity: 0.95;">
+                            ${project.whyValue}
+                        </p>
+                    </div>
+                    
+                    <div style="background: rgba(255,255,255,0.1); padding: 1.25rem; border-radius: 8px; margin-top: 1.5rem; border-left: 3px solid var(--sand);">
+                        <strong style="color: var(--sand);">⏰ Optimal Timing:</strong> ${project.timing}
+                    </div>
+                </div>
+            `;
+            
+            document.getElementById('costResult').innerHTML = resultHTML;
+        }
+
+        // Initialize value guide
+        window.addEventListener('DOMContentLoaded', function() {
+            updateValueGuide();
+        });
+
+        // Plant Finder - Comprehensive Database
+        function findPlants() {
+            const zone = parseInt(document.getElementById('plantZone').value);
+            const sun = document.getElementById('sunExposure').value;
+            const soil = document.getElementById('soilType').value;
+            const water = document.getElementById('waterLevel').value;
+            const type = document.getElementById('plantType').value;
+            const height = document.getElementById('plantHeight').value;
+            
+            // Comprehensive plant database
+            const allPlants = [
+                // PERENNIALS - Full Sun
+                { name: 'Coneflower', latin: 'Echinacea purpurea', type: 'perennial', sun: 'full', soil: ['clay', 'loam', 'sandy'], water: 'low', zones: [3,9], height: 'medium', notes: 'Drought-tolerant native, attracts pollinators, blooms summer-fall, long-lasting cut flower' },
+                { name: 'Black-Eyed Susan', latin: 'Rudbeckia hirta', type: 'perennial', sun: 'full', soil: ['clay', 'loam', 'sandy'], water: 'low', zones: [3,7], height: 'medium', notes: 'Low-maintenance perennial, heat and drought tolerant, self-seeds readily' },
+                { name: 'Russian Sage', latin: 'Perovskia atriplicifolia', type: 'perennial', sun: 'full', soil: ['loam', 'sandy'], water: 'low', zones: [4,9], height: 'tall', notes: 'Silvery foliage, purple blooms, deer resistant, aromatic when brushed' },
+                { name: 'Daylily', latin: 'Hemerocallis', type: 'perennial', sun: 'full', soil: ['clay', 'loam'], water: 'medium', zones: [3,9], height: 'medium', notes: 'Extremely versatile, wide color range, long bloom period, low maintenance' },
+                { name: 'Yarrow', latin: 'Achillea millefolium', type: 'perennial', sun: 'full', soil: ['loam', 'sandy'], water: 'low', zones: [3,9], height: 'medium', notes: 'Flat flower clusters, excellent for cutting, drought tolerant once established' },
+                { name: 'Sedum', latin: 'Sedum spectabile', type: 'perennial', sun: 'full', soil: ['loam', 'sandy'], water: 'low', zones: [3,9], height: 'short', notes: 'Succulent foliage, late-season blooms, very low maintenance, attracts butterflies' },
+                { name: 'Lavender', latin: 'Lavandula angustifolia', type: 'perennial', sun: 'full', soil: ['loam', 'sandy'], water: 'low', zones: [5,9], height: 'short', notes: 'Aromatic foliage, purple blooms, attracts bees, needs excellent drainage' },
+                { name: 'Salvia', latin: 'Salvia nemorosa', type: 'perennial', sun: 'full', soil: ['loam', 'sandy'], water: 'medium', zones: [4,8], height: 'medium', notes: 'Long blooming period, attracts hummingbirds, deer resistant, reblooms if deadheaded' },
+                { name: 'Catmint', latin: 'Nepeta faassenii', type: 'perennial', sun: 'full', soil: ['loam', 'sandy'], water: 'low', zones: [3,8], height: 'short', notes: 'Fragrant foliage, lavender-blue flowers, cat favorite, billowy texture' },
+                { name: 'Shasta Daisy', latin: 'Leucanthemum × superbum', type: 'perennial', sun: 'full', soil: ['loam'], water: 'medium', zones: [5,9], height: 'medium', notes: 'Classic white daisy, long blooming, excellent cut flower, cheerful appearance' },
+                { name: 'Blanket Flower', latin: 'Gaillardia', type: 'perennial', sun: 'full', soil: ['sandy', 'loam'], water: 'low', zones: [3,10], height: 'short', notes: 'Vibrant red-yellow blooms, heat and drought tolerant, blooms all summer' },
+                { name: 'Coreopsis', latin: 'Coreopsis verticillata', type: 'perennial', sun: 'full', soil: ['loam', 'sandy'], water: 'low', zones: [4,9], height: 'short', notes: 'Bright yellow flowers, fine-textured foliage, long blooming, low maintenance' },
+                { name: 'Bee Balm', latin: 'Monarda didyma', type: 'perennial', sun: 'full', soil: ['clay', 'loam'], water: 'medium', zones: [4,9], height: 'medium', notes: 'Attracts hummingbirds and butterflies, aromatic foliage, can spread aggressively' },
+                { name: 'Liatris', latin: 'Liatris spicata', type: 'perennial', sun: 'full', soil: ['loam', 'sandy'], water: 'medium', zones: [3,9], height: 'medium', notes: 'Unique bottle-brush flowers, blooms top to bottom, attracts butterflies' },
+                { name: 'Ornamental Allium', latin: 'Allium spp.', type: 'perennial', sun: 'full', soil: ['loam', 'sandy'], water: 'low', zones: [4,8], height: 'medium', notes: 'Dramatic spherical blooms, deer resistant, architectural interest, spring bloomer' },
+                
+                // PERENNIALS - Partial Sun/Shade
+                { name: 'Hosta', latin: 'Hosta spp.', type: 'perennial', sun: 'shade', soil: ['clay', 'loam'], water: 'medium', zones: [3,9], height: 'short', notes: 'Shade tolerant, diverse foliage colors and textures, slug prone, easy care' },
+                { name: 'Astilbe', latin: 'Astilbe spp.', type: 'perennial', sun: 'partial', soil: ['clay', 'loam'], water: 'high', zones: [4,9], height: 'medium', notes: 'Feathery plumes, prefers moist soil, excellent for woodland gardens, long-lasting blooms' },
+                { name: 'Coral Bells', latin: 'Heuchera', type: 'perennial', sun: 'partial', soil: ['loam'], water: 'medium', zones: [4,9], height: 'short', notes: 'Colorful foliage year-round, delicate flower spikes, versatile, compact habit' },
+                { name: 'Japanese Forest Grass', latin: 'Hakonechloa macra', type: 'grass', sun: 'shade', soil: ['loam'], water: 'medium', zones: [5,9], height: 'short', notes: 'Graceful cascading habit, golden varieties available, prefers shade, elegant texture' },
+                { name: 'Brunnera', latin: 'Brunnera macrophylla', type: 'perennial', sun: 'shade', soil: ['clay', 'loam'], water: 'medium', zones: [3,8], height: 'short', notes: 'Heart-shaped leaves, forget-me-not flowers, tolerates clay, spring bloomer' },
+                { name: 'Hellebore', latin: 'Helleborus orientalis', type: 'perennial', sun: 'shade', soil: ['loam'], water: 'medium', zones: [4,9], height: 'short', notes: 'Early spring blooms, evergreen foliage, deer resistant, long-lived' },
+                { name: 'Solomon\'s Seal', latin: 'Polygonatum odoratum', type: 'perennial', sun: 'shade', soil: ['loam'], water: 'medium', zones: [3,9], height: 'medium', notes: 'Arching stems, shade tolerant, native woodland plant, elegant form' },
+                { name: 'Lungwort', latin: 'Pulmonaria', type: 'perennial', sun: 'shade', soil: ['loam'], water: 'medium', zones: [4,8], height: 'short', notes: 'Spotted foliage, early spring flowers, shade lover, groundcover habit' },
+                { name: 'Bleeding Heart', latin: 'Dicentra spectabilis', type: 'perennial', sun: 'partial', soil: ['loam'], water: 'high', zones: [3,9], height: 'medium', notes: 'Heart-shaped flowers, spring bloomer, goes dormant in summer, romantic appeal' },
+                { name: 'Ligularia', latin: 'Ligularia dentata', type: 'perennial', sun: 'partial', soil: ['clay', 'loam'], water: 'high', zones: [4,8], height: 'tall', notes: 'Large dramatic leaves, yellow spikes, needs consistent moisture, bold texture' },
+                { name: 'Japanese Painted Fern', latin: 'Athyrium niponicum', type: 'perennial', sun: 'shade', soil: ['loam'], water: 'medium', zones: [4,9], height: 'short', notes: 'Silvery fronds with burgundy stems, shade lover, delicate texture, low maintenance' },
+                { name: 'Toad Lily', latin: 'Tricyrtis hirta', type: 'perennial', sun: 'shade', soil: ['loam'], water: 'medium', zones: [4,9], height: 'medium', notes: 'Exotic spotted flowers, late season bloom, shade tolerant, unique appearance' },
+                { name: 'Foam Flower', latin: 'Tiarella cordifolia', type: 'groundcover', sun: 'shade', soil: ['loam'], water: 'medium', zones: [3,8], height: 'short', notes: 'Delicate white flower spikes, attractive foliage, native groundcover, spreads slowly' },
+                
+                // SHRUBS - Sun
+                { name: 'Butterfly Bush', latin: 'Buddleia davidii', type: 'shrub', sun: 'full', soil: ['loam', 'sandy'], water: 'low', zones: [5,10], height: 'tall', notes: 'Attracts butterflies heavily, fast growing, long blooming, fragrant, can be invasive' },
+                { name: 'Spirea', latin: 'Spiraea japonica', type: 'shrub', sun: 'full', soil: ['loam', 'clay'], water: 'medium', zones: [3,8], height: 'medium', notes: 'Spring or summer blooms, colorful foliage varieties, low maintenance, compact habit' },
+                { name: 'Potentilla', latin: 'Potentilla fruticosa', type: 'shrub', sun: 'full', soil: ['loam', 'sandy'], water: 'low', zones: [3,7], height: 'short', notes: 'Long blooming period, yellow or white flowers, drought tolerant, neat habit' },
+                { name: 'Barberry', latin: 'Berberis thunbergii', type: 'shrub', sun: 'full', soil: ['loam', 'clay', 'sandy'], water: 'low', zones: [4,8], height: 'medium', notes: 'Colorful foliage, thorny (good security), drought tolerant, low maintenance' },
+                { name: 'Smoke Bush', latin: 'Cotinus coggygria', type: 'shrub', sun: 'full', soil: ['loam', 'sandy'], water: 'low', zones: [5,8], height: 'tall', notes: 'Purple or green foliage, smoky flower plumes, fall color, drought tolerant' },
+                { name: 'Weigela', latin: 'Weigela florida', type: 'shrub', sun: 'full', soil: ['loam'], water: 'medium', zones: [4,8], height: 'tall', notes: 'Tubular flowers attract hummingbirds, spring bloomer, colorful foliage varieties' },
+                { name: 'Rose of Sharon', latin: 'Hibiscus syriacus', type: 'shrub', sun: 'full', soil: ['loam', 'clay'], water: 'medium', zones: [5,9], height: 'tall', notes: 'Large tropical-looking flowers, late summer blooms, can be trained as tree' },
+                { name: 'Ninebark', latin: 'Physocarpus opulifolius', type: 'shrub', sun: 'full', soil: ['loam', 'clay'], water: 'medium', zones: [3,7], height: 'tall', notes: 'Colorful foliage varieties, peeling bark interest, native, very hardy' },
+                { name: 'Deutzia', latin: 'Deutzia gracilis', type: 'shrub', sun: 'full', soil: ['loam'], water: 'medium', zones: [5,8], height: 'medium', notes: 'Profuse white spring blooms, graceful arching branches, low maintenance' },
+                
+                // SHRUBS - Shade
+                { name: 'Azalea', latin: 'Rhododendron spp.', type: 'shrub', sun: 'partial', soil: ['loam'], water: 'medium', zones: [5,8], height: 'medium', notes: 'Spectacular spring blooms, acid-loving, evergreen or deciduous, needs shade' },
+                { name: 'Hydrangea', latin: 'Hydrangea macrophylla', type: 'shrub', sun: 'partial', soil: ['loam', 'clay'], water: 'high', zones: [5,9], height: 'medium', notes: 'Large showy flowers, color changes with soil pH, needs consistent moisture' },
+                { name: 'Japanese Pieris', latin: 'Pieris japonica', type: 'shrub', sun: 'partial', soil: ['loam'], water: 'medium', zones: [5,8], height: 'medium', notes: 'Drooping white flower clusters, evergreen, new growth is colorful, acid-loving' },
+                { name: 'Mountain Laurel', latin: 'Kalmia latifolia', type: 'shrub', sun: 'partial', soil: ['loam'], water: 'medium', zones: [5,9], height: 'tall', notes: 'Native evergreen, unique cup-shaped flowers, acid-loving, deer resistant' },
+                { name: 'Oakleaf Hydrangea', latin: 'Hydrangea quercifolia', type: 'shrub', sun: 'partial', soil: ['loam'], water: 'medium', zones: [5,9], height: 'tall', notes: 'Native, oak-shaped leaves, white cone flowers, excellent fall color, peeling bark' },
+                { name: 'Leucothoe', latin: 'Leucothoe fontanesiana', type: 'shrub', sun: 'shade', soil: ['loam'], water: 'medium', zones: [5,8], height: 'medium', notes: 'Evergreen, arching branches, shade tolerant, acidic soil lover, burgundy winter color' },
+                { name: 'Japanese Andromeda', latin: 'Pieris japonica', type: 'shrub', sun: 'partial', soil: ['loam'], water: 'medium', zones: [6,8], height: 'tall', notes: 'Evergreen, cascading white flowers, colorful new growth, acid soil required' },
+                
+                // TREES
+                { name: 'Japanese Maple', latin: 'Acer palmatum', type: 'tree', sun: 'partial', soil: ['loam'], water: 'medium', zones: [5,8], height: 'vtall', notes: 'Spectacular fall color, delicate foliage, many varieties, architectural form' },
+                { name: 'Dogwood', latin: 'Cornus florida', type: 'tree', sun: 'partial', soil: ['loam'], water: 'medium', zones: [5,9], height: 'vtall', notes: 'Spring flowering, fall color, native, understory tree, four-season interest' },
+                { name: 'Redbud', latin: 'Cercis canadensis', type: 'tree', sun: 'partial', soil: ['loam', 'clay'], water: 'medium', zones: [4,9], height: 'vtall', notes: 'Early spring pink blooms, heart-shaped leaves, native, attracts pollinators' },
+                { name: 'Serviceberry', latin: 'Amelanchier spp.', type: 'tree', sun: 'partial', soil: ['loam'], water: 'medium', zones: [4,9], height: 'vtall', notes: 'White spring flowers, edible berries, fall color, native, four-season interest' },
+                { name: 'Crabapple', latin: 'Malus spp.', type: 'tree', sun: 'full', soil: ['loam'], water: 'medium', zones: [4,8], height: 'vtall', notes: 'Spectacular spring blooms, persistent fruit, many disease-resistant varieties' },
+                { name: 'River Birch', latin: 'Betula nigra', type: 'tree', sun: 'full', soil: ['clay', 'loam'], water: 'high', zones: [4,9], height: 'vtall', notes: 'Peeling cinnamon bark, tolerates wet soil, native, fast growing, multi-trunk' },
+                { name: 'Red Maple', latin: 'Acer rubrum', type: 'tree', sun: 'full', soil: ['clay', 'loam'], water: 'medium', zones: [3,9], height: 'vtall', notes: 'Brilliant fall color, adaptable, fast growing, native, tolerates wet sites' },
+                { name: 'Sweetgum', latin: 'Liquidambar styraciflua', type: 'tree', sun: 'full', soil: ['loam', 'clay'], water: 'medium', zones: [5,9], height: 'vtall', notes: 'Excellent fall color, star-shaped leaves, native, spiky seed balls' },
+                { name: 'Hornbeam', latin: 'Carpinus betulus', type: 'tree', sun: 'partial', soil: ['loam', 'clay'], water: 'medium', zones: [4,8], height: 'vtall', notes: 'Dense canopy, tolerates pruning well, slow growing, elegant form' },
+                
+                // ORNAMENTAL GRASSES
+                { name: 'Karl Foerster Feather Reed Grass', latin: 'Calamagrostis × acutiflora', type: 'grass', sun: 'full', soil: ['clay', 'loam'], water: 'medium', zones: [5,9], height: 'tall', notes: 'Upright habit, early bloomer, does not self-seed, very reliable' },
+                { name: 'Little Bluestem', latin: 'Schizachyrium scoparium', type: 'grass', sun: 'full', soil: ['sandy', 'loam'], water: 'low', zones: [3,9], height: 'medium', notes: 'Native prairie grass, blue-green foliage, coppery fall color, drought tolerant' },
+                { name: 'Maiden Grass', latin: 'Miscanthus sinensis', type: 'grass', sun: 'full', soil: ['loam'], water: 'medium', zones: [5,9], height: 'tall', notes: 'Graceful arching form, fall plumes, many varieties, can spread' },
+                { name: 'Blue Fescue', latin: 'Festuca glauca', type: 'grass', sun: 'full', soil: ['sandy', 'loam'], water: 'low', zones: [4,8], height: 'short', notes: 'Steel-blue foliage, compact mounds, evergreen, drought tolerant' },
+                { name: 'Switch Grass', latin: 'Panicum virgatum', type: 'grass', sun: 'full', soil: ['loam', 'clay'], water: 'medium', zones: [4,9], height: 'tall', notes: 'Native prairie grass, upright habit, fall color, airy seed heads' },
+                { name: 'Fountain Grass', latin: 'Pennisetum alopecuroides', type: 'grass', sun: 'full', soil: ['loam'], water: 'medium', zones: [5,9], height: 'medium', notes: 'Bottlebrush plumes, graceful arching, late season interest' },
+                { name: 'Northern Sea Oats', latin: 'Chasmanthium latifolium', type: 'grass', sun: 'shade', soil: ['loam'], water: 'medium', zones: [3,8], height: 'medium', notes: 'Shade tolerant, unique dangling seed heads, native, self-seeds moderately' },
+                
+                // GROUNDCOVERS
+                { name: 'Pachysandra', latin: 'Pachysandra terminalis', type: 'groundcover', sun: 'shade', soil: ['loam'], water: 'medium', zones: [4,8], height: 'short', notes: 'Evergreen, dense coverage, shade lover, low maintenance, spreads well' },
+                { name: 'Vinca', latin: 'Vinca minor', type: 'groundcover', sun: 'shade', soil: ['loam'], water: 'low', zones: [4,9], height: 'short', notes: 'Evergreen, blue spring flowers, spreads quickly, very low maintenance' },
+                { name: 'Creeping Phlox', latin: 'Phlox subulata', type: 'groundcover', sun: 'full', soil: ['sandy', 'loam'], water: 'low', zones: [3,9], height: 'short', notes: 'Carpet of spring color, evergreen, drought tolerant, rock garden favorite' },
+                { name: 'Ajuga', latin: 'Ajuga reptans', type: 'groundcover', sun: 'partial', soil: ['loam', 'clay'], water: 'medium', zones: [3,9], height: 'short', notes: 'Purple or bronze foliage, blue flower spikes, spreads quickly, tolerates foot traffic' },
+                { name: 'Sweet Woodruff', latin: 'Galium odoratum', type: 'groundcover', sun: 'shade', soil: ['loam'], water: 'medium', zones: [4,8], height: 'short', notes: 'Fragrant foliage, white spring flowers, shade lover, delicate texture' },
+                { name: 'Creeping Sedum', latin: 'Sedum spp.', type: 'groundcover', sun: 'full', soil: ['sandy', 'loam'], water: 'low', zones: [3,9], height: 'short', notes: 'Succulent foliage, drought tolerant, many varieties, green roof plant' },
+                { name: 'Lamium', latin: 'Lamium maculatum', type: 'groundcover', sun: 'shade', soil: ['loam'], water: 'medium', zones: [3,8], height: 'short', notes: 'Variegated foliage, pink or white flowers, shade tolerant, spreads moderately' }
+            ];
+            
+            // Filter plants based on ALL criteria
+            let filteredPlants = allPlants.filter(plant => {
+                // Zone check
+                const zoneMatch = plant.zones[0] <= zone && zone <= plant.zones[1];
+                
+                // Sun exposure check
+                const sunMatch = plant.sun === sun;
+                
+                // Soil check (plant must accept the soil type)
+                const soilMatch = plant.soil.includes(soil);
+                
+                // Water check
+                const waterMatch = plant.water === water;
+                
+                // Type check
+                const typeMatch = type === 'all' || plant.type === type;
+                
+                // Height check
+                let heightMatch = true;
+                if (height !== 'all') {
+                    heightMatch = plant.height === height;
+                }
+                
+                return zoneMatch && sunMatch && soilMatch && waterMatch && typeMatch && heightMatch;
+            });
+            
+            // If no exact matches, relax water requirement
+            if (filteredPlants.length === 0) {
+                filteredPlants = allPlants.filter(plant => {
+                    const zoneMatch = plant.zones[0] <= zone && zone <= plant.zones[1];
+                    const sunMatch = plant.sun === sun;
+                    const soilMatch = plant.soil.includes(soil);
+                    const typeMatch = type === 'all' || plant.type === type;
+                    let heightMatch = true;
+                    if (height !== 'all') {
+                        heightMatch = plant.height === height;
+                    }
+                    return zoneMatch && sunMatch && soilMatch && typeMatch && heightMatch;
+                });
+            }
+            
+            // Sort by type for better organization
+            filteredPlants.sort((a, b) => {
+                const typeOrder = { tree: 0, shrub: 1, grass: 2, perennial: 3, groundcover: 4 };
+                return typeOrder[a.type] - typeOrder[b.type];
+            });
+            
+            // Limit to top 12 results
+            const displayPlants = filteredPlants.slice(0, 12);
+            
+            if (displayPlants.length === 0) {
+                document.getElementById('plantResults').innerHTML = `
+                    <div style="margin-top: 2rem; padding: 2rem; background: rgba(132, 189, 72, 0.1); border-radius: 12px; text-align: center;">
+                        <h3 style="color: var(--earth-medium);">No exact matches found</h3>
+                        <p>Try adjusting your criteria, particularly water requirements or height preferences.</p>
+                    </div>
+                `;
+                return;
+            }
+            
+            let html = '<div class="plant-grid">';
+            displayPlants.forEach(plant => {
+                const typeColors = {
+                    tree: '#4a6741',
+                    shrub: '#7d8f69',
+                    perennial: '#9cb380',
+                    grass: '#b8956a',
+                    groundcover: '#8b8680'
+                };
+                
+                html += `
+                    <div class="plant-card">
+                        <div class="plant-card-header" style="background: linear-gradient(135deg, ${typeColors[plant.type]} 0%, var(--earth-light) 100%);">
+                            <h4>${plant.name}</h4>
+                            <em style="opacity: 0.9; font-size: 0.9rem;">${plant.latin}</em>
+                        </div>
+                        <div class="plant-card-body">
+                            <p style="line-height: 1.6; margin-bottom: 1rem;">${plant.notes}</p>
+                            <div class="plant-tags">
+                                <span class="tag">Zones ${plant.zones[0]}-${plant.zones[1]}</span>
+                                <span class="tag">${plant.type}</span>
+                                <span class="tag">${plant.sun} sun</span>
+                                <span class="tag">${plant.water} water</span>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+            html += '</div>';
+            
+            const matchText = filteredPlants.length > 12 
+                ? `Showing top 12 of ${filteredPlants.length} matches`
+                : `${displayPlants.length} plants match your criteria`;
+            
+            html = `
+                <div style="margin-top: 2rem;">
+                    <h3>Recommended Plants For Your Conditions</h3>
+                    <p style="color: var(--earth-medium); margin-bottom: 0.5rem;">
+                        Zone ${zone} • ${sun} sun • ${soil} soil • ${water} water
+                    </p>
+                    <p style="color: var(--stone); font-size: 0.95rem; margin-bottom: 1.5rem;">
+                        ${matchText}. Always verify local availability and check with your extension office for pest/disease concerns in your area.
+                    </p>
+                    ${html}
+                </div>
+            `;
+            
+            document.getElementById('plantResults').innerHTML = html;
+        }
+
+        // Calendar
+        function updateCalendar() {
+            const region = document.getElementById('region').value;
+            
+            const schedules = {
+                northeast: {
+                    'March': ['Apply pre-emergent crabgrass control', 'Prune summer-blooming shrubs', 'Begin lawn cleanup and dethatching'],
+                    'April': ['First lawn mowing (set high)', 'Plant cool-season vegetables', 'Apply spring fertilizer', 'Edge beds and refresh mulch'],
+                    'May': ['Plant annuals after last frost', 'Divide perennials', 'Monitor for pests and diseases', 'Deep water new plantings'],
+                    'June': ['Deadhead flowers regularly', 'Apply summer mulch (2-3")', 'Monitor irrigation system', 'Prune spring-blooming shrubs'],
+                    'July': ['Water deeply but infrequently', 'Apply slow-release fertilizer', 'Monitor for drought stress', 'Harvest vegetables'],
+                    'August': ['Overseed thin lawn areas', 'Plant fall mums', 'Continue pest monitoring', 'Reduce watering frequency'],
+                    'September': ['Core aerate lawns', 'Apply fall fertilizer', 'Plant spring bulbs', 'Divide overcrowded perennials'],
+                    'October': ['Final lawn mowing', 'Mulch leaves as natural fertilizer', 'Protect tender plants', 'Drain irrigation system'],
+                    'November': ['Cut back perennials', 'Protect young trees from deer', 'Store garden tools', 'Apply winter mulch'],
+                    'December-February': ['Plan next season', 'Order seeds and plants', 'Prune dormant trees', 'Check for winter damage']
+                },
+                southeast: {
+                    'January': ['Prune fruit trees', 'Plan spring garden', 'Apply dormant oil spray', 'Check irrigation system'],
+                    'February': ['Plant bare-root roses', 'Fertilize spring bulbs', 'Prune summer-blooming shrubs', 'Prep vegetable beds'],
+                    'March': ['Plant warm-season lawn', 'Fertilize trees and shrubs', 'Mulch all beds', 'Begin pest monitoring'],
+                    'April': ['Plant summer annuals', 'Fertilize lawns', 'Deadhead spring bulbs', 'Water deeply as needed'],
+                    'May': ['Monitor for heat stress', 'Apply pre-emergent herbicide', 'Harvest cool-season crops', 'Mulch to conserve moisture'],
+                    'June-August': ['Water during drought', 'Monitor for pests', 'Fertilize sparingly in heat', 'Harvest vegetables regularly'],
+                    'September': ['Overseed lawns', 'Plant fall vegetables', 'Divide perennials', 'Apply fall fertilizer'],
+                    'October': ['Plant spring bulbs', 'Aerate lawns', 'Refresh mulch', 'Plant cool-season flowers'],
+                    'November': ['Protect tender plants', 'Final lawn fertilization', 'Clean up annual beds', 'Plant trees and shrubs'],
+                    'December': ['Prune dormant plants', 'Check for winter damage', 'Plan landscape changes', 'Mulch for winter protection']
+                }
+            };
+            
+            const schedule = schedules[region] || schedules.northeast;
+            
+            let html = '<div class="calendar-grid">';
+            for (let month in schedule) {
+                html += `
+                    <div class="month-card">
+                        <h4>${month}</h4>
+                        <ul class="task-list">
+                            ${schedule[month].map(task => `<li>${task}</li>`).join('')}
+                        </ul>
+                    </div>
+                `;
+            }
+            html += '</div>';
+            
+            document.getElementById('calendarDisplay').innerHTML = html;
+        }
+
+        // Material Calculator
+        function updateMaterialCalc() {
+            const type = document.getElementById('materialType').value;
+            const depthField = document.getElementById('depthField');
+            if (type === 'pavers' || type === 'sod') {
+                depthField.style.display = 'none';
+            } else {
+                depthField.style.display = 'block';
+            }
+        }
+
+        function calculateMaterial() {
+            const type = document.getElementById('materialType').value;
+            const area = parseFloat(document.getElementById('coverageArea').value);
+            const depth = parseFloat(document.getElementById('materialDepth').value || 3);
+            
+            let result = {};
+            
+            switch(type) {
+                case 'mulch':
+                case 'soil':
+                    const cubicFeet = (area * depth) / 12;
+                    const cubicYards = cubicFeet / 27;
+                    const withWaste = cubicYards * 1.1;
+                    result = {
+                        amount: withWaste.toFixed(2),
+                        unit: 'cubic yards',
+                        note: 'Includes 10% waste factor for settling and irregular shapes. Professional tip: Order in 0.5 cubic yard increments for easier delivery and spreading.'
+                    };
+                    break;
+                    
+                case 'gravel':
+                    const cubicFt = (area * depth) / 12;
+                    const tons = (cubicFt * 100) / 2000; // Approx 100 lbs per cubic foot
+                    const tonsWithWaste = tons * 1.15;
+                    result = {
+                        amount: tonsWithWaste.toFixed(2),
+                        unit: 'tons',
+                        note: 'Includes 15% waste factor for compaction and irregular shapes. Gravel weight varies by type; this assumes standard crushed stone.'
+                    };
+                    break;
+                    
+                case 'pavers':
+                    const paversPerSqFt = 4.5; // Average for 12x12 pavers
+                    const totalPavers = area * paversPerSqFt;
+                    const paversWithWaste = Math.ceil(totalPavers * 1.1);
+                    result = {
+                        amount: paversWithWaste,
+                        unit: 'pavers',
+                        note: 'Based on standard 12"x12" pavers. Includes 10% waste for cuts and future repairs. Always order extras from the same batch for color matching.'
+                    };
+                    break;
+                    
+                case 'sod':
+                    const sodWithWaste = Math.ceil(area * 1.05);
+                    result = {
+                        amount: sodWithWaste,
+                        unit: 'square feet',
+                        note: 'Includes 5% waste factor. Sod should be installed within 24 hours of delivery. Proper soil preparation is critical for success.'
+                    };
+                    break;
+            }
+            
+            const resultHTML = `
+                <div class="result-box">
+                    <h3>Required Materials</h3>
+                    <div class="result-value">${result.amount} ${result.unit}</div>
+                    <p style="margin-top: 1rem; line-height: 1.6;">
+                        ${result.note}
+                    </p>
+                </div>
+            `;
+            
+            document.getElementById('materialResult').innerHTML = resultHTML;
+        }
+
+        // ROI Calculator
+        function calculateROI() {
+            const homeValue = parseFloat(document.getElementById('homeValue').value);
+            const investment = parseFloat(document.getElementById('landscapeInvestment').value);
+            const projectType = document.getElementById('roiProjectType').value;
+            
+            const roiMultipliers = {
+                curb: { min: 1.5, max: 2.0, valueIncrease: 0.08 },
+                outdoor: { min: 0.7, max: 1.2, valueIncrease: 0.06 },
+                full: { min: 0.9, max: 1.5, valueIncrease: 0.10 },
+                maintenance: { min: 1.0, max: 1.0, valueIncrease: 0.03 }
+            };
+            
+            const multiplier = roiMultipliers[projectType];
+            const recoveredValue = investment * ((multiplier.min + multiplier.max) / 2);
+            const roi = ((recoveredValue - investment) / investment) * 100;
+            const newHomeValue = homeValue + (homeValue * multiplier.valueIncrease);
+            const valueIncrease = newHomeValue - homeValue;
+            
+            const insights = {
+                curb: 'Front yard improvements deliver the highest ROI because they create immediate visual impact. First impressions drive buyer interest and can reduce time on market significantly.',
+                outdoor: 'Outdoor living spaces extend usable square footage and appeal to lifestyle buyers. Quality construction and design integration maximize return.',
+                full: 'Comprehensive landscape renovations address functional issues (drainage, grading) while enhancing aesthetics. Professional design ensures cohesive, high-value results.',
+                maintenance: 'Regular professional maintenance preserves your landscape investment and prevents costly repairs. Well-maintained properties consistently appraise higher.'
+            };
+            
+            const resultHTML = `
+                <div class="result-box">
+                    <h3>Estimated Financial Impact</h3>
+                    <div class="grid-2" style="margin: 1.5rem 0;">
+                        <div>
+                            <div style="opacity: 0.9; font-size: 0.9rem; margin-bottom: 0.5rem;">Recovered Value at Sale</div>
+                            <div class="result-value" style="font-size: 2rem;">$${recoveredValue.toLocaleString()}</div>
+                        </div>
+                        <div>
+                            <div style="opacity: 0.9; font-size: 0.9rem; margin-bottom: 0.5rem;">ROI Percentage</div>
+                            <div class="result-value" style="font-size: 2rem;">${roi.toFixed(0)}%</div>
+                        </div>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.15); padding: 1.5rem; border-radius: 8px; margin-top: 1rem;">
+                        <div style="opacity: 0.9; font-size: 0.9rem; margin-bottom: 0.5rem;">Estimated Home Value Increase</div>
+                        <div style="font-size: 1.75rem; font-weight: 700;">$${valueIncrease.toLocaleString()}</div>
+                        <div style="margin-top: 0.5rem; opacity: 0.9;">New Est. Value: $${newHomeValue.toLocaleString()}</div>
+                    </div>
+                    <p style="margin-top: 1.5rem; line-height: 1.6;">
+                        <strong>Why This Works:</strong> ${insights[projectType]}
+                    </p>
+                    <p style="margin-top: 1rem; opacity: 0.9; font-size: 0.95rem;">
+                        <strong>Important:</strong> ROI varies by market, property type, and execution quality. Professional design and installation significantly impact returns. These estimates reflect industry research averages.
+                    </p>
+                </div>
+            `;
+            
+            document.getElementById('roiResult').innerHTML = resultHTML;
+        }
+
+        // Zone Finder (Simplified - in production would use actual API)
+        function findZone() {
+            const zip = document.getElementById('zipCode').value;
+            
+            if (zip.length !== 5) {
+                alert('Please enter a valid 5-digit ZIP code');
+                return;
+            }
+            
+            // Simplified zone mapping - in production would use USDA API
+            const firstDigit = zip.charAt(0);
+            const zoneMap = {
+                '0': '4a-5b', '1': '5a-6b', '2': '6a-7a',
+                '3': '6b-7b', '4': '5b-6b', '5': '5a-6a',
+                '6': '5b-6b', '7': '6a-8a', '8': '7a-9b',
+                '9': '7b-10a'
+            };
+            
+            const zone = zoneMap[firstDigit] || '6a-7b';
+            
+            const resultHTML = `
+                <div class="zone-info">
+                    <div class="zone-badge">USDA Zone ${zone}</div>
+                    <h3>Your Growing Zone</h3>
+                    <p style="margin: 1rem 0;">
+                        ZIP code <strong>${zip}</strong> is in USDA Hardiness Zone <strong>${zone}</strong>. 
+                        This zone indicates your area's average annual minimum winter temperature.
+                    </p>
+                    <div style="background: white; padding: 1.5rem; border-radius: 8px; margin-top: 1.5rem;">
+                        <h4 style="color: var(--earth-medium); margin-bottom: 1rem;">What This Means For You:</h4>
+                        <ul style="list-style-position: inside; line-height: 1.8;">
+                            <li>Select plants rated for zone ${zone} or lower</li>
+                            <li>Consider microclimates (south walls may support one zone higher)</li>
+                            <li>Pay attention to first/last frost dates for planting schedules</li>
+                            <li>Heat tolerance and humidity matter as much as cold hardiness</li>
+                        </ul>
+                    </div>
+                    <div class="expert-note" style="margin-top: 1.5rem;">
+                        <strong>Did You Know?</strong> The USDA updated hardiness zones in 2023 to reflect our changing climate. Many areas shifted half a zone warmer. Always verify your zone with the latest USDA map for the most accurate plant selection.
+                    </div>
+                </div>
+            `;
+            
+            document.getElementById('zoneResult').innerHTML = resultHTML;
+        }
+
+        // Wire up all event listeners
+        document.addEventListener('DOMContentLoaded', function() {
+            // Nav tabs
+            document.querySelectorAll('#mainNav button').forEach(function(btn) {
+                btn.addEventListener('click', function() {
+                    var sectionId = this.getAttribute('data-section');
+                    document.querySelectorAll('.tool-section').forEach(function(s) { s.classList.remove('active'); });
+                    document.querySelectorAll('#mainNav button').forEach(function(b) { b.classList.remove('active'); });
+                    document.getElementById(sectionId).classList.add('active');
+                    btn.classList.add('active');
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                    // Optional: Call autoResize here if you need it to trigger on tab change specifically
+                    if(typeof autoResize === 'function') setTimeout(autoResize, 100);
+                });
+            });
+
+            // Buttons
+            document.getElementById('btnValueGuide').addEventListener('click', updateValueGuide);
+            document.getElementById('btnFindPlants').addEventListener('click', findPlants);
+            document.getElementById('btnCalcMaterial').addEventListener('click', calculateMaterial);
+            document.getElementById('btnCalcROI').addEventListener('click', calculateROI);
+            document.getElementById('btnFindZone').addEventListener('click', findZone);
+
+            // Selects
+            document.getElementById('projectType').addEventListener('change', updateValueGuide);
+            document.getElementById('region').addEventListener('change', updateCalendar);
+            document.getElementById('materialType').addEventListener('change', updateMaterialCalc);
+        });
+
+        // Send the height of the document to the parent window (for iframe embeds)
+        function autoResize() {
+            const newHeight = document.body.scrollHeight;
+            window.parent.postMessage({ frameHeight: newHeight }, '*');
+        }
+
+        // Fire resize event when the page loads, resizes, or when clicks happen
+        window.addEventListener('load', autoResize);
+        window.addEventListener('resize', autoResize);
+        document.body.addEventListener('click', function() {
+            setTimeout(autoResize, 100); // Small delay to allow content to render first
+        });
+    </script>
+</body>
+</html>

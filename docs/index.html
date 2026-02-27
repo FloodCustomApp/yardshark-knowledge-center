@@ -132,6 +132,27 @@
             box-shadow: 0 8px 32px var(--shadow);
             border: 1px solid rgba(132, 189, 72, 0.1);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            max-height: 900px;
+            min-height: 900px;
+            overflow-y: auto;
+        }
+
+        /* Custom scrollbar */
+        .tool-card::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .tool-card::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .tool-card::-webkit-scrollbar-thumb {
+            background: rgba(132, 189, 72, 0.3);
+            border-radius: 3px;
+        }
+
+        .tool-card::-webkit-scrollbar-thumb:hover {
+            background: rgba(132, 189, 72, 0.5);
         }
 
         .tool-card:hover {
@@ -940,7 +961,7 @@
                 </div>
                 <div class="footer-info">
                     <p>3850 River Road, Sodus, MI 49126</p>
-                    <p style="margin-top: 0.75rem;"><a href="/cdn-cgi/l/email-protection#adefc1ccc4c3c8edf4ccdfc9fec5ccdfc6e1ccdac3eeccdfc883cec2c0"><span class="__cf_email__" data-cfemail="fcbe909d959299bca59d8e98af949d8e97b09d8b92bf9d8e99d29f9391">[email&#160;protected]</span></a></p>
+                    <p style="margin-top: 0.75rem;"><a href="mailto:Blaine@YardSharkLawnCare.com">Blaine@YardSharkLawnCare.com</a></p>
                     <p>OFFICE: <a href="tel:2693320325">(269) 332-0325</a> | BLAINE: <a href="tel:2693254882">(269) 325-4882</a></p>
                 </div>
             </div>
@@ -958,7 +979,7 @@
         </div>
     </footer>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    <script>
         // Navigation
         function showSection(sectionId, btn) {
             const sections = document.querySelectorAll('.tool-section');
@@ -1570,4 +1591,10 @@
             document.getElementById('btnFindZone').addEventListener('click', findZone);
 
             // Selects
-            document.getElementById('projectType').addEventListener
+            document.getElementById('projectType').addEventListener('change', updateValueGuide);
+            document.getElementById('region').addEventListener('change', updateCalendar);
+            document.getElementById('materialType').addEventListener('change', updateMaterialCalc);
+        });
+    </script>
+</body>
+</html>
